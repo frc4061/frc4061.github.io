@@ -1,10 +1,13 @@
 import {
 	__fieldSize__,
 	__friction__,
+	__blinkThreshold__,
 	__maxTurn__,
 	__turnMultiplier__,
-	__turnSpring__
+	__turnSpring__,
+	__blinkSpeed__
 } from "../lib/constants";
+import { getFrame } from "../lib/utils";
 import { Vector } from "../lib/vector";
 
 export class Robot {
@@ -87,8 +90,18 @@ export class Robot {
 		this.ctx.lineTo(-4, 20);
 
 		this.ctx.stroke();
+
 		this.ctx.fillRect(-20, -15, 40, 30);
 		this.ctx.strokeRect(-20, -15, 40, 30);
+
+		this.ctx.beginPath();
+		this.ctx.ellipse(0, 0, 5, 5, 0, 0, Math.PI * 2);
+		this.ctx.fillStyle = ["#440000", "#ff0000"][
+			this.vel < __blinkThreshold__ ? 0 : getFrame(__blinkSpeed__, 2)
+		];
+		this.ctx.fill();
+		this.ctx.stroke();
+
 		this.ctx.rotate(-this.angle);
 		this.ctx.translate(-this.pos.x + this.cam.x, -this.pos.y + this.cam.y);
 	}
