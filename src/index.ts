@@ -19,15 +19,7 @@ const keys = {
 };
 const cam = new Vector(-window.innerWidth / 2, -window.innerHeight / 2);
 const robot = new Robot(ctx, cam);
-const title = new Text(
-	Vector.ZERO,
-	"SciBorgs",
-	"#1358bf",
-	0.5,
-	"150px Rubik Mono One",
-	ctx,
-	cam
-);
+const title = new Text(Vector.ZERO, "SciBorgs", 150, ctx, cam);
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -51,11 +43,19 @@ const update = () => {
 
 	ctx.beginPath();
 
-	for (let i = -cam.x % __gridSize__; i <= canvas.width; i += __gridSize__) {
+	for (
+		let i = Math.round(-cam.x % __gridSize__);
+		i <= canvas.width;
+		i += __gridSize__
+	) {
 		ctx.moveTo(i, 0);
 		ctx.lineTo(i, canvas.height);
 	}
-	for (let i = -cam.y % __gridSize__; i <= canvas.height; i += __gridSize__) {
+	for (
+		let i = Math.round(-cam.y % __gridSize__);
+		i <= canvas.height;
+		i += __gridSize__
+	) {
 		ctx.moveTo(0, i);
 		ctx.lineTo(canvas.width, i);
 	}
