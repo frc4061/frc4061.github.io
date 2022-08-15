@@ -1,5 +1,6 @@
-export class Vector {
+export default class Vector {
 	public x: number;
+
 	public y: number;
 
 	public constructor(x: number, y: number) {

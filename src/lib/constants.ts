@@ -1,13 +1,13 @@
-import { Vector } from "./vector";
+import Vector from "./vector";
 
-export const __speed__ = 0.8;
-export const __turnSpeed__ = 0.05;
-export const __turnMultiplier__ = 0.02;
-export const __turnSpring__ = 0.8;
-export const __maxTurn__ = Math.PI / 10;
-export const __friction__ = 0.9;
-export const __lerp__ = 0.05;
-export const __gridSize__ = 40;
-export const __fieldSize__ = new Vector(4000, 2000);
-export const __blinkThreshold__ = 0.5;
-export const __blinkSpeed__ = 400;
+export const SPEED = 0.8;
+export const TURN_SPEED = 0.05;
+export const TURN_MULTIPLIER = 0.02;
+export const TURN_SPRING = 0.8;
+export const MAX_TURN = Math.PI / 10;
+export const FRICTION = 0.9;
+export const LERP = 0.05;
+export const GRID_SIZE = 40;
+export const FIELD_SIZE = new Vector(4000, 2000);
+export const BLINK_THRESHOLD = 0.5;
+export const BLINK_SPEED = 400;

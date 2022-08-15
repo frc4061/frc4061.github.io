@@ -1,21 +1,26 @@
 import {
-	__fieldSize__,
-	__friction__,
-	__blinkThreshold__,
-	__maxTurn__,
-	__turnMultiplier__,
-	__turnSpring__,
-	__blinkSpeed__
+	BLINK_SPEED,
+	BLINK_THRESHOLD,
+	FIELD_SIZE,
+	FRICTION,
+	MAX_TURN,
+	TURN_MULTIPLIER,
+	TURN_SPRING
 } from "../lib/constants";
 import { getFrame } from "../lib/utils";
-import { Vector } from "../lib/vector";
+import Vector from "../lib/vector";
 
-export class Robot {
+export default class Robot {
 	private pos: Vector;
+
 	private speed: number;
+
 	private angle: number;
+
 	private wheelAngle: number;
+
 	private ctx: CanvasRenderingContext2D;
+
 	private cam: Vector;
 
 	public constructor(ctx: CanvasRenderingContext2D, cam: Vector) {
@@ -29,8 +34,9 @@ export class Robot {
 
 	public turn(angle: number) {
 		this.wheelAngle += angle;
-		if (this.wheelAngle > __maxTurn__) this.wheelAngle = __maxTurn__;
-		else if (this.wheelAngle < -__maxTurn__) this.wheelAngle = -__maxTurn__;
+
+		if (this.wheelAngle > MAX_TURN) this.wheelAngle = MAX_TURN;
+		else if (this.wheelAngle < -MAX_TURN) this.wheelAngle = -MAX_TURN;
 	}
 
 	public accelerate(amount: number) {
@@ -45,17 +51,15 @@ export class Robot {
 		this.pos.x += this.speed * Math.cos(this.angle);
 		this.pos.y += this.speed * Math.sin(this.angle);
 
-		this.angle += this.wheelAngle * this.speed * __turnMultiplier__;
-		this.wheelAngle *= __turnSpring__;
+		this.angle += this.wheelAngle * this.speed * TURN_MULTIPLIER;
+		this.wheelAngle *= TURN_SPRING;
 
-		this.speed *= __friction__;
+		this.speed *= FRICTION;
 
-		if (this.pos.x > __fieldSize__.x / 2) this.pos.x = __fieldSize__.x / 2;
-		else if (this.pos.x < -__fieldSize__.x / 2)
-			this.pos.x = -__fieldSize__.x / 2;
-		if (this.pos.y > __fieldSize__.y / 2) this.pos.y = __fieldSize__.y / 2;
-		else if (this.pos.y < -__fieldSize__.y / 2)
-			this.pos.y = -__fieldSize__.y / 2;
+		if (this.pos.x > FIELD_SIZE.x / 2) this.pos.x = FIELD_SIZE.x / 2;
+		else if (this.pos.x < -FIELD_SIZE.x / 2) this.pos.x = -FIELD_SIZE.x / 2;
+		if (this.pos.y > FIELD_SIZE.y / 2) this.pos.y = FIELD_SIZE.y / 2;
+		else if (this.pos.y < -FIELD_SIZE.y / 2) this.pos.y = -FIELD_SIZE.y / 2;
 	}
 
 	public draw() {
@@ -98,9 +102,7 @@ export class Robot {
 		this.ctx.moveTo(5, 0);
 		this.ctx.ellipse(0, 0, 5, 5, 0, 0, Math.PI * 2);
 		this.ctx.fillStyle = ["#440000", "#ff0000"][
-			Math.abs(this.speed) < __blinkThreshold__
-				? 0
-				: getFrame(__blinkSpeed__, 2)
+			Math.abs(this.speed) < BLINK_THRESHOLD ? 0 : getFrame(BLINK_SPEED, 2)
 		];
 		this.ctx.fill();
 		this.ctx.stroke();

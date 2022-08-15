@@ -1,0 +1,16 @@
+{
+	"texts": [
+		[0, -80, "4-H PART", 150],
+		[0, 80, "SciBorgs", 150]
+	],
+	"redirects": [
+		[0, 400, "GitHub", 80, "https://github.com/frc4061"],
+		[0, 600, "Front Page", 80, "https://youtube.com/watch?v=dQw4w9WgXcQ"]
+	],
+	"images": [
+		[0, 0, "icon.png", 1],
+		[-1000, 0, "a.jpg", 1],
+		[1000, 0, "b.jpg", 1],
+		[0, -500, "c.jpg", 1]
+	]
+}
