@@ -5,7 +5,7 @@
 	],
 	"redirects": [
 		[0, 400, "GitHub", 80, "https://github.com/frc4061"],
-		[0, 600, "Front Page", 80, "https://youtube.com/watch?v=dQw4w9WgXcQ"]
+		[0, 600, "Robot Demo", 80, "https://youtube.com/watch?v=dQw4w9WgXcQ"]
 	],
 	"images": [
 		[0, 0, "icon.png", 1],
