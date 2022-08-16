@@ -1,16 +1,73 @@
 {
 	"texts": [
 		[0, -80, "4-H PART", 150],
-		[0, 80, "SciBorgs", 150]
+		[0, 80, "SciBorgs", 150],
+		[0, 300, "Gracious Professionalism", 50, false],
+		[-700, 600, "What is 4-H?", 100],
+		[-700, 700, "4‑H is delivered by Cooperative Extension—", 30, false],
+		[-700, 750, "a community of more than 100 public universities", 30, false],
+		[-700, 800, "across the nation that provides experiences", 30, false],
+		[-700, 850, "where young people learn by doing. For more", 30, false],
+		[-700, 900, "than 100 years, 4‑H has welcomed young people", 30, false],
+		[
+			-700,
+			950,
+			"of all beliefs and backgrounds, giving kids a voice",
+			30,
+			false
+		],
+		[-700, 1000, "to express who they are and how they make their", 30, false],
+		[-700, 1050, "lives and communities better.", 30, false],
+		[-700, 1150, "Through life-changing 4‑H programs, nearly six", 30, false],
+		[-700, 1200, "million kids and teens have taken on critical", 30, false],
+		[-700, 1250, "societal issues, such as addressing community", 30, false],
+		[
+			-700,
+			1300,
+			"health inequities, engaging in civil discourse and",
+			30,
+			false
+		],
+		[-700, 1350, "advocating for equity and inclusion for all.", 30, false],
+		[700, 600, "What is FIRST?", 100],
+		[700, 700, "The mission of FIRST® is to inspire young people", 30, false],
+		[700, 750, "to be science and technology leaders and", 30, false],
+		[700, 800, "innovators, by engaging them in exciting", 30, false],
+		[700, 850, "mentor-based programs that build science,", 30, false],
+		[700, 900, "engineering, and technology skills, that inspire", 30, false],
+		[700, 950, "innovation, and that foster well-rounded life", 30, false],
+		[700, 1000, "capabilities including self-confidence,", 30, false],
+		[700, 1050, "communication, and leadership.", 30, false],
+		[1000, -500, "Support", 100],
+		[1000, -250, "Find the exact same low prices, vast selection,", 20, false],
+		[1000, -200, "and convenient shopping experience. Amazon Smile", 20, false],
+		[
+			1000,
+			-150,
+			"will donate 0.5% of eligible purchases to the 4-H",
+			20,
+			false
+		],
+		[1000, -100, "Palouse Area Robotics Team.", 20, false],
+		[1000, 0, "Venmo", 80],
+		[1000, 100, "Venmo ID: FourH PART", 30, false],
+		[1000, 150, "sciborgs6061@gmail.com", 30, false],
+		[1000, 250, "Check", 80],
+		[1000, 350, "Checks can be mailed to 4-H PART", 30, false],
+		[1000, 400, "310 N Main St. Rm 209", 30, false],
+		[1000, 450, "Colfax, WA 99111", 30, false]
 	],
 	"redirects": [
-		[0, 400, "GitHub", 80, "https://github.com/frc4061"],
-		[0, 600, "Robot Demo", 80, "https://youtube.com/watch?v=dQw4w9WgXcQ"]
+		[-900, -300, "Facebook", 80, "https://facebook.com/sciborgs4061"],
+		[-900, -100, "Twitter", 80, "https://twitter.com/sciborgs4061"],
+		[-900, 100, "Instagram", 80, "https://instagram.com/frc4061"],
+		[-900, 300, "GitHub", 80, "https://github.com/frc4061"],
+		[1000, -350, "Amazon Smile", 80, "https://smile.amazon.com/ch/47-2565453"]
 	],
 	"images": [
-		[0, 0, "icon.png", 1],
-		[-1000, 0, "a.jpg", 1],
-		[1000, 0, "b.jpg", 1],
-		[0, -500, "c.jpg", 1]
+		[0, 0, "icon.png", 1, false],
+		[-800, -800, "a.jpg", 1],
+		[0, -600, "b.jpg", 1],
+		[800, -800, "c.jpg", 1]
 	]
 }

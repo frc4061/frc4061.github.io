@@ -16,7 +16,7 @@ export default class Redirect extends Text {
 		cam: Vector,
 		robot: Robot
 	) {
-		super(pos, content, fontSize, ctx, cam, robot, "#ff6600");
+		super(pos, content, fontSize, ctx, cam, robot, true, "#ff6600");
 
 		this.target = target;
 		this.opened = false;

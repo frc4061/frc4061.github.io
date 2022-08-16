@@ -26,7 +26,8 @@ const texts = data.texts.map(
 			text[3] as number,
 			ctx,
 			cam,
-			robot
+			robot,
+			text.length <= 4
 		)
 );
 const redirects = data.redirects.map(
@@ -49,7 +50,8 @@ const images = data.images.map(
 			image[3] as number,
 			ctx,
 			cam,
-			robot
+			robot,
+			image.length <= 4
 		)
 );
 

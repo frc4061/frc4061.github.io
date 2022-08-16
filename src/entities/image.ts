@@ -8,6 +8,8 @@ export default class ImageEntity {
 
 	private scale: number;
 
+	private hover: boolean;
+
 	private ctx: CanvasRenderingContext2D;
 
 	private cam: Vector;
@@ -22,12 +24,14 @@ export default class ImageEntity {
 		scale: number,
 		ctx: CanvasRenderingContext2D,
 		cam: Vector,
-		robot: Robot
+		robot: Robot,
+		hover: boolean = true
 	) {
 		this.pos = pos;
 		this.content = new Image();
 		this.content.src = `assets/${src}`;
 		this.scale = scale;
+		this.hover = hover;
 		this.ctx = ctx;
 		this.cam = cam;
 		this.robot = robot;
@@ -42,15 +46,17 @@ export default class ImageEntity {
 	}
 
 	public draw() {
-		const pos = this.robot.getPosition();
-		const { bounds } = this;
-		this.ctx.globalAlpha =
-			pos.y > bounds.top &&
-			pos.y < bounds.bottom &&
-			pos.x > bounds.left &&
-			pos.x < bounds.right
-				? 0.8
-				: 0.5;
+		if (this.hover) {
+			const pos = this.robot.getPosition();
+			const { bounds } = this;
+			this.ctx.globalAlpha =
+				pos.y > bounds.top &&
+				pos.y < bounds.bottom &&
+				pos.x > bounds.left &&
+				pos.x < bounds.right
+					? 0.8
+					: 0.5;
+		} else this.ctx.globalAlpha = 0.5;
 
 		this.ctx.drawImage(
 			this.content,

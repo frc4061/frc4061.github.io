@@ -8,6 +8,8 @@ export default class Text {
 
 	private fontSize: number;
 
+	private hover: boolean;
+
 	private color: string;
 
 	private ctx: CanvasRenderingContext2D;
@@ -25,12 +27,14 @@ export default class Text {
 		ctx: CanvasRenderingContext2D,
 		cam: Vector,
 		robot: Robot,
-		color?: string
+		hover: boolean = true,
+		color: string = "#1358bf"
 	) {
 		this.pos = pos;
 		this.content = content;
 		this.fontSize = fontSize;
-		this.color = color ?? "#1358bf";
+		this.hover = hover;
+		this.color = color;
 		this.ctx = ctx;
 		this.cam = cam;
 		this.robot = robot;
@@ -44,15 +48,17 @@ export default class Text {
 	}
 
 	public draw() {
-		const pos = this.robot.getPosition();
-		const { bounds } = this;
-		this.ctx.globalAlpha =
-			pos.y > bounds.top &&
-			pos.y < bounds.bottom &&
-			pos.x > bounds.left &&
-			pos.x < bounds.right
-				? 0.8
-				: 0.5;
+		if (this.hover) {
+			const pos = this.robot.getPosition();
+			const { bounds } = this;
+			this.ctx.globalAlpha =
+				pos.y > bounds.top &&
+				pos.y < bounds.bottom &&
+				pos.x > bounds.left &&
+				pos.x < bounds.right
+					? 0.8
+					: 0.5;
+		} else this.ctx.globalAlpha = 0.5;
 
 		this.ctx.fillStyle = this.color;
 		this.ctx.font = `${this.fontSize}px Rubik Mono One`;
